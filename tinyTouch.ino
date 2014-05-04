@@ -1,12 +1,12 @@
-/* Use an ATtiny85 to play a simple squarewave oscillator that changes frequency through touch.
+/* Use an ATtiny85 to control two squarewave oscillators that change frequency through touch.
  *
  * Circuit: 
  * ATtiny85 
  * Capacitive sensors on pins 2,3,4
  * 3 x 4.7 MΩ resistors between pins 1 and 2,3,4
- * speaker-sound output on pin 0 (PWM pin for further developement of the code)
+ * Speaker-sound output on pin 0 (PWM pin for further developement of the code)
  *
- * March-April 2014
+ * April-May 2014
  */
 
 // include the Arduino CapSense library
@@ -15,8 +15,11 @@
 // sound output connected to pin 0
 #define speaker 0
 
-// frequency variable
-int noiseVal;
+// lower mid frequency oscillator variable
+int LMFVal;
+
+// low frequency oscillator variable
+int LFVal;
 
 // frequency duration variable
 int duration;
@@ -44,10 +47,12 @@ void loop() {
   orangeVal = orange.capacitiveSensor(10);
   greenVal = green.capacitiveSensor(10);
 
-  noiseVal = constrain(yellowVal, 60, 880);
+  LMFVal = constrain(yellowVal, 60, 880);
+  LFVal = constrain(orangeVal, 60, 80);
   duration = constrain(greenVal, 10, 50);
 
-  makeNoise();
+  LMFOsc();
+  LFOsc ();
 }
 
 // the sound generating function
@@ -63,8 +68,13 @@ void noise (unsigned char speakerPin, int frequencyInHertz, long timeInMilliseco
   }	 
 }
 
-// our oscillator
-void makeNoise () {
-  noise(speaker, noiseVal, duration); 
+// a lower mid frequency oscillator
+void LMFOsc () {
+  noise(speaker, LMFVal, duration); 
+}
+
+// a lower frequency oscillator
+void LFOsc () {
+  noise(speaker, LMFVal, duration); 
 }
 
