@@ -1,7 +1,7 @@
 tinyTouch+-
 ===========
 
-An embroidered 8-bit synthesizer based on the ATtiny85. 
+An embroidered 8-bit synthesizer based on the ATtiny85 that controls two squarewave oscillators that change frequency through touch. 
 The synth has three capacitive sensors (made with conductive thread) and uses the Arduino CapSense library. 
 
 Circuit:
