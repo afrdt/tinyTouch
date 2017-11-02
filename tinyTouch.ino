@@ -25,9 +25,9 @@ int LFVal;
 int duration;
 
 // capacitive sensors
-CapacitiveSensor yellow = CapacitiveSensor(1,3);        // 4.7 MΩ resistor between pins 1 and 3, pin 3 is the sensor pin
-CapacitiveSensor orange = CapacitiveSensor(1,4);        // 4.7 MΩ resistor between pins 1 and 4, pin 4 is the sensor pin
-CapacitiveSensor green = CapacitiveSensor(1,2);        // 4.7 MΩ resistor between pins 1 ans 2, pin 2 is the sensor pin
+CapacitiveSensor yellow = CapacitiveSensor(2,3);        // 4.7 MΩ resistor between pins 2 and 3, pin 3 is the sensor pin
+CapacitiveSensor orange = CapacitiveSensor(2,4);        // 4.7 MΩ resistor between pins 2 and 4, pin 4 is the sensor pin
+CapacitiveSensor green = CapacitiveSensor(2,1);        // 4.7 MΩ resistor between pins 2 ans 2, pin 1 is the sensor pin
 
 // variables that hold the sensors' readings
 long yellowVal;
