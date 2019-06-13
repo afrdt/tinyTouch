@@ -12,5 +12,5 @@ Circuit:
 3 x 1 MΩ resistors (between digital pin 2 and the sensors' pins) (different iterations: 1M - 4.7M Ohms resistors)
 1 x 1/8" audio jack/speaker (audio output connected to digital pin 0)
 
-* update: I have remade the synth by burning the ATtiny85 bootloader at 16MHz and it works great! I strongly recomment this addition.
+* update: I remade the synth by burning the ATtiny85 bootloader at 16MHz and it works great! I strongly recomment this addition.
 
