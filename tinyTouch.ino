@@ -75,6 +75,6 @@ void LMFOsc () {
 
 // a lower frequency oscillator
 void LFOsc () {
-  noise(speaker, LMFVal, duration); 
+  noise(speaker, LFVal, duration); 
 }
 
